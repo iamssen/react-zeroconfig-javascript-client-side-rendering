@@ -1,0 +1,8 @@
+{
+  "en-US": {
+    "sample.text": "THIS IS TRANSLATION TEXT ({locale})"
+  },
+  "ko-KR": {
+    "sample.text": "이것은 다국어 문자열 입니다 ({locale})"
+  }
+}
