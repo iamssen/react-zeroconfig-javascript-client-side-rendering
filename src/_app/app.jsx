@@ -3,7 +3,7 @@ import { cookieKeys, languageCodes } from 'app/config';
 import { AppContextProvider } from 'app/context';
 import { asyncRouteStore } from 'app/route/asyncRouteStore';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import 'shared/polyfills';
 import { getBrowserLocale } from 'use-locale';
@@ -19,8 +19,7 @@ function AppProvider() {
   
   return (
     <BrowserRouter>
-      <AppContextProvider initialState={window.__INITIAL_STATE__ || null}
-                          currentLocale={currentLocale}
+      <AppContextProvider currentLocale={currentLocale}
                           currentTimezone={currentTimezone}>
         <App routeStore={asyncRouteStore}/>
       </AppContextProvider>
@@ -28,7 +27,7 @@ function AppProvider() {
   );
 }
 
-ReactDOM.render((
+render((
   <AppProvider/>
 ), document.querySelector('#app'));
 
